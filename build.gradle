@@ -15,8 +15,6 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-
     // https://mvnrepository.com/artifact/io.qameta.allure/allure-selenide
     compile group: 'io.qameta.allure', name: 'allure-selenide', version: '2.13.2'
 
@@ -35,4 +33,32 @@ dependencies {
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
 
+}
+
+// chỗ này là test configuration cho Gradle nha - trường hợp này sử dụng JUnit5 =  useJUnitPlatform()
+tasks.withType(Test) {
+    /*
+    * Enable JUnit Platform (JUnit 5) support, default is JUnit
+    */
+    useJUnitPlatform()
+    /*
+    * Make failing tests do not fail the task
+    */
+    ignoreFailures = true
+
+    /*
+    * If any upToDateWhen spec returns false, the task is considered out of date.
+    * If they return true, Gradle does the normal behavior of checking input/output files.
+    */
+    outputs.upToDateWhen { false }
+
+    /*
+    * To show standard out and standard error of the test JVM(s) on the console
+    */
+    testLogging.showStandardStreams = true
+
+    /*
+    *  Want to display the following test events
+    */
+    testLogging { events 'passed', 'skipped', 'failed' }
 }
