@@ -5,12 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.FindAll;
-import org.openqa.selenium.support.FindBy;
 
 import java.util.concurrent.TimeUnit;
 
-public class OpenUrlTestChrome {
+public class ChromeBrowserTest {
     @Test
     void test(){
         System.setProperty("webdriver.chrome.driver", "E:\\Automation\\practise\\practise04\\drivers\\chromedriver.exe");

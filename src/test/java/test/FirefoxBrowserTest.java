@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.File;
 
-public class TestFirefox {
+public class FirefoxBrowserTest {
     @Test
     void testFirefox(){
         File firefoxDriver = new File("drivers/geckodriver.exe");

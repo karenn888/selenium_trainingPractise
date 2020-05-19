@@ -18,7 +18,7 @@ public class DemoTest {
         WebDriver driver = new ChromeDriver();
         String appUrl = "https://www.google.com/";
 
-        // launch the firefox browser and open the application url
+        // launch the chrome browser and open the application url
         driver.get(appUrl);
 
         // maximize the browser window
